@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+    <!-- body -->
+    {% block content %}
+    <h1>Welcome to M-Bazar </h1>
+    {% for i in cart %}
+    <p>{{i.id}}</p>
+    <p>{{i.name}}</p>
+    <p>{{i.price}}</p>
+    <p>{{i.description}}</p>
+
+    {% endfor %}
+
+      
+    {% endblock %}
+

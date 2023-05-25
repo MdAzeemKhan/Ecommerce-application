@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+    <!-- body -->
+    {% block content %}
+    <h1>Welcome to M-Bazar </h1>
+
+    <div class="card" style="width: 18rem;">
+        {% for i in product %}
+        <img src="{{i.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <p class="card-text">{{i.price}}</p>
+          <p class="card-text">{{i.description}}</p>
+          <form  action="/" method="post">
+            {% csrf_token %}
+            <input hidden type="text" name="product" value="{{i.id}}">
+            <input type="submit" class="btn btn-primary" value="Add to cart" >
+          </form>
+        </div>  
+        {% endfor %}
+
+      </div>
+    {% endblock %}
+
+
+
+
+
